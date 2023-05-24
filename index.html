@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Captain Spork</title>
+
+    <link rel="stylesheet" href="./assets/styles.css" />
+  </head>
+  <body>
+    <!-- Modal -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <h2>Mission Failed</h2>
+        <p>Your rocket collided with an asteroid.</p>
+        <button onclick="restartGame()">Restart</button>
+      </div>
+    </div>
+    <div id="game-container">
+      <div id="score">Score: 0</div>
+      <div id="rocket"></div>
+      <!-- Add JavaScript code to dynamically create asteroids -->
+      <script src="./assets/script.js"></script>
+    </div>
+  </body>
+</html>
