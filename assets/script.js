@@ -169,6 +169,22 @@ function handleMouseClick(event) {
   }
 }
 
+function createStars() {
+  const container = document.getElementById("game-container");
+  const starCount = 100;
+
+  for (let i = 0; i < starCount; i++) {
+    const star = document.createElement("div");
+    star.classList.add("star");
+    star.style.top = `${Math.random() * 100}%`;
+    star.style.left = `${Math.random() * 100}%`;
+    star.style.animationDelay = `${Math.random() * 5}s`;
+    container.appendChild(star);
+  }
+}
+
+createStars();
+
 // Add event listeners for keydown, keyup, touchstart, and click events
 document.addEventListener("keydown", handleKeydown);
 document.addEventListener("keyup", handleKeyup);

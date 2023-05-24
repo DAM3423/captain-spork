@@ -1,3 +1,7 @@
+body {
+  background-color: #808080; /* Set the background color to gray */
+}
+
 /* Modal Styles */
 .modal {
   display: none;
@@ -38,11 +42,12 @@
 
 #game-container {
   position: relative;
-  width: 95vw;
-  height: 95vh;
+  width: 375px;
+  height: 667px;
   border: 1px solid black;
   overflow: hidden;
   background: linear-gradient(black, #306);
+  animation: scrolling-background 10s linear infinite;
 }
 
 /* Rocket Styles */
@@ -143,11 +148,68 @@
 }
 
 .asteroid {
+  width: 60px;
+  height: 60px;
+  background-color: gray;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+}
+
+.asteroid:before {
+  content: "";
   position: absolute;
-  top: -50px; /* Adjust the initial position as needed */
-  left: 50%; /* Adjust the initial position as needed */
-  transform: translateX(-50%);
-  width: 50px; /* Adjust the size as needed */
-  height: 50px; /* Adjust the size as needed */
-  background-color: gray; /* Adjust the color as needed */
+  top: 10px;
+  left: 20px;
+  width: 20px;
+  height: 20px;
+  background-color: darkgray;
+  border-radius: 50%;
+}
+
+.asteroid:after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 40px;
+  height: 20px;
+  background-color: darkgray;
+  border-radius: 50%;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  animation: twinkling 5s linear infinite;
+  opacity: 0;
+}
+
+@keyframes scrolling-background {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 100%;
+  }
+}
+
+@keyframes twinkling {
+  0% {
+    opacity: 0;
+    top: -10%;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    top: 110%;
+  }
 }
